@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#28AED581"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/new_address_input"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/new_address_hint"
+        android:textColor="#0C0C0C"
+        android:textColorHint="#97050505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_address_title" />
+
+    <TextView
+        android:id="@+id/new_address_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/new_address_title"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_input" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#81C784"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/title"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/instruction"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/address_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/address_title"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructions" />
+
+    <EditText
+        android:id="@+id/address_input"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/address_hint"
+        android:textColor="#0C0C0C"
+        android:textColorHint="#97050505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_title" />
+
+    <TextView
+        android:id="@+id/output_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/results"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculate" />
+
+    <Button
+        android:id="@+id/calculate"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:onClick="location_check"
+        android:shadowColor="#81C784"
+        android:text="@string/check_address"
+        android:textColorHighlight="#81C784"
+        android:textColorLink="#81C784"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_address_input"
+        app:rippleColor="#81C784"
+        app:strokeColor="#81C784" />
+
+    <Button
+        android:id="@+id/delete_address"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:onClick="deleteAddress"
+        android:shadowColor="#81C784"
+        android:text="@string/delete_address"
+        android:textColorHighlight="#81C784"
+        android:textColorLink="#81C784"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/output_result"
+        app:rippleColor="#81C784"
+        app:strokeColor="#81C784" />
+
+    <Button
+        android:id="@+id/update_address"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:onClick="updateAddress"
+        android:shadowColor="#81C784"
+        android:text="@string/update_address"
+        android:textColorHighlight="#81C784"
+        android:textColorLink="#81C784"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delete_address"
+        app:rippleColor="#81C784"
+        app:strokeColor="#81C784" />
+
+    <Button
+        android:id="@+id/add_address"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="36dp"
+        android:onClick="addAddressToDatabase"
+        android:shadowColor="#81C784"
+        android:text="@string/add_address"
+        android:textColorHighlight="#81C784"
+        android:textColorLink="#81C784"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/output_result"
+        app:rippleColor="#81C784"
+        app:strokeColor="#81C784" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Assignment2</string>
+    <string name="address_title">Address:</string>
+    <string name="address_hint">Address</string>
+    <string name="new_address_title">New Address:</string>
+    <string name="new_address_hint">New Address</string>
+    <string name="check_address">Check Address</string>
+    <string name="monthly_payment">Monthly Payment</string>
+    <string name="title">Coordinate Finder</string>
+    <string name="instruction">Please enter the address to see if the coordinates are stored in the app!</string>
+    <string name="results"></string>
+    <string name="add_address">Add Address</string>
+    <string name="delete_address">Delete Address</string>
+    <string name="update_address">Update Address</string>
+</resources>

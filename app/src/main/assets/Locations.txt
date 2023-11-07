@@ -1,0 +1,50 @@
+CN Tower, -79.3871, 43.6426
+Royal Ontario Museum, -79.3947, 43.6686
+Ripley's Aquarium of Canada, -79.386, 43.6424
+Toronto Islands, -79.3832, 43.6224
+Distillery District, -79.3591, 43.6509
+High Park, -79.4633, 43.6465
+Art Gallery of Ontario, -79.3923, 43.6536
+Yonge-Dundas Square, -79.3802, 43.6561
+Queen's Park, -79.3912, 43.6609
+St. Lawrence Market, -79.3713, 43.6488
+Casa Loma, -79.4093, 43.678
+Ontario Science Centre, -79.3397, 43.716
+Kensington Market, -79.4022, 43.6555
+Toronto Zoo, -79.1847, 43.8177
+Royal Woodbine Golf Club, -79.5902, 43.6885
+Royal York Golf Club, -79.5732, 43.721
+Yorkville, -79.3919, 43.6701
+The Beaches, -79.315, 43.6667
+Nathan Phillips Square, -79.3834, 43.6526
+Allan Gardens, -79.3748, 43.6623
+Ontario Place, -79.417, 43.6285
+Bata Shoe Museum, -79.4017, 43.6679
+Evergreen Brick Works, -79.3654, 43.6853
+Humber Bay Park, -79.4715, 43.6222
+The Danforth, -79.3358, 43.6802
+Little Italy, -79.4139, 43.6557
+Riverdale Park, -79.3533, 43.6682
+Yonge-Eglinton, -79.3996, 43.7068
+Fort York, -79.4007, 43.6385
+The Aga Khan Museum, -79.3317, 43.7256
+Downsview Park, -79.4852, 43.7392
+The Rec Room, -79.2575, 43.7751
+Toronto Music Garden, -79.3961, 43.6383
+Tommy Thompson Park, -79.1295, 43.6274
+Scarborough Bluffs, -79.2392, 43.7023
+Humber River Park, -79.4994, 43.6769
+The Bentway, -79.3972, 43.6388
+Cherry Beach, -79.3474, 43.6349
+Toronto Islands - Ward's Island, -79.3645, 43.6184
+Christie Pits, -79.4194, 43.6645
+Edwards Gardens, -79.3578, 43.7344
+Eglinton Flats, -79.4993, 43.6941
+The Elgin and Winter Garden Theatre Centre, -79.3785, 43.6537
+Sunnyside Beach, -79.4494, 43.641
+Downsview Dells Park, -79.4879, 43.7419
+Yonge-Sheppard, -79.4109, 43.7615
+Queen Street West, -79.3943, 43.647
+Allan Gardens Conservatory, -79.3748, 43.6627
+Ontario Place Cinesphere, -79.4157, 43.6285
+Bluffer's Park, -79.2212, 43.7168
