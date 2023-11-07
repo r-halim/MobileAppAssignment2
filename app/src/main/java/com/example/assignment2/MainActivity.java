@@ -1,6 +1,8 @@
 package com.example.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Address;
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Method invoked when "Check Address" button is clicked
+    @SuppressLint("SetTextI18n")
     public void location_check(View view) {
         // Gets the address input from the user
         String address = ((EditText) findViewById(R.id.address_input)).getText().toString();
@@ -98,11 +101,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     // Method to display the address details (latitude and longitude)
     private void displayAddressDetails(String address) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query(
-                dbHelper.DATABASE_TABLE, // Use the table name from the DatabaseHelper
+                DatabaseHelper.DATABASE_TABLE,
                 new String[]{Location.COLUMN_LONGITUDE, Location.COLUMN_LATITUDE},
                 Location.COLUMN_ADDRESS + " = ?",
                 new String[]{address},
@@ -117,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
                 double longitude = cursor.getDouble(longitudeIndex);
                 double latitude = cursor.getDouble(latitudeIndex);
                 // Format latitude and longitude to show only 4 decimal places
-                String formattedLatitude = String.format("%.4f", latitude);
-                String formattedLongitude = String.format("%.4f", longitude);
+                @SuppressLint("DefaultLocale") String formattedLatitude = String.format("%.4f", latitude);
+                @SuppressLint("DefaultLocale") String formattedLongitude = String.format("%.4f", longitude);
                 String resultText = "Address is found. Latitude: " + formattedLatitude + ", Longitude: " + formattedLongitude;
                 TextView output_result = findViewById(R.id.output_result);
                 output_result.setText(resultText);
@@ -134,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Method invoked when "Delete Address" button is clicked
+    @SuppressLint("SetTextI18n")
     public void deleteAddress(View view) {
         String address = ((EditText) findViewById(R.id.address_input)).getText().toString();
 
@@ -176,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Method invoked when "Add Address" button is clicked
+    @SuppressLint("SetTextI18n")
     public void addAddressToDatabase(View view) {
         String address = ((EditText) findViewById(R.id.address_input)).getText().toString();
 
@@ -187,33 +193,29 @@ public class MainActivity extends AppCompatActivity {
 
         Pair<Double, Double> latLng = geocodeAddress(address);
 
-        if (latLng != null) {
-            double latitude = latLng.first;
-            double longitude = latLng.second;
+        double latitude = latLng.first;
+        double longitude = latLng.second;
 
-            // Adding the address to the database
-            long result = dbHelper.addAddressToDatabase(address, latitude, longitude);
+        // Adding the address to the database
+        long result = dbHelper.addAddressToDatabase(address, latitude, longitude);
 
-            if (result != -1) {
-                // Address has been added successfully, show a success message
-                Toast.makeText(this, "Address added successfully.", Toast.LENGTH_SHORT).show();
-                output_result.setText("Address added successfully.");
-            } else {
-                // Address addition failed; show an error message
-                Toast.makeText(this, "Failed to add the address to the database.", Toast.LENGTH_SHORT).show();
-                output_result.setText("Failed to add the address to the database.");
-            }
-
-            // Disable the "Add" button after the operation
-            Button addButton = findViewById(R.id.add_address);
-            addButton.setEnabled(false);
+        if (result != -1) {
+            // Address has been added successfully, show a success message
+            Toast.makeText(this, "Address added successfully.", Toast.LENGTH_SHORT).show();
+            output_result.setText("Address added successfully.");
         } else {
-            // Handle geocoding failure
-            output_result.setText("Geocoding failed. Please check the address.");
+            // Address addition failed; show an error message
+            Toast.makeText(this, "Failed to add the address to the database.", Toast.LENGTH_SHORT).show();
+            output_result.setText("Failed to add the address to the database.");
         }
+
+        // Disable the "Add" button after the operation
+        Button addButton = findViewById(R.id.add_address);
+        addButton.setEnabled(false);
     }
 
     // Method invoked when "Update Address" button is clicked
+    @SuppressLint("SetTextI18n")
     public void updateAddress(View view) {
         String oldAddress = ((EditText) findViewById(R.id.address_input)).getText().toString();
 
@@ -233,28 +235,23 @@ public class MainActivity extends AppCompatActivity {
 
         Pair<Double, Double> newLatLng = geocodeAddress(newAddress);
 
-        if (newLatLng != null) {
-            double newLatitude = newLatLng.first;
-            double newLongitude = newLatLng.second;
+        double newLatitude = newLatLng.first;
+        double newLongitude = newLatLng.second;
 
-            boolean isUpdated = dbHelper.updateAddressInDatabase(oldAddress, newAddress, newLatitude, newLongitude);
+        boolean isUpdated = dbHelper.updateAddressInDatabase(oldAddress, newAddress, newLatitude, newLongitude);
 
-            if (isUpdated) {
-                // Address has been updated successfully, show a success message
-                Toast.makeText(this, "Address updated successfully.", Toast.LENGTH_SHORT).show();
-                output_result.setText("Address updated successfully.");
-            } else {
-                // Address was not found in the database, show a message to the user
-                Toast.makeText(this, "Address not found or failed to update.", Toast.LENGTH_SHORT).show();
-                output_result.setText("Address not found or failed to update.");
-            }
-
-            // Clear the "New Address" input field
-            newAddressInput.setText("");
+        if (isUpdated) {
+            // Address has been updated successfully, show a success message
+            Toast.makeText(this, "Address updated successfully.", Toast.LENGTH_SHORT).show();
+            output_result.setText("Address updated successfully.");
         } else {
-            // Handle geocoding failure
-            Toast.makeText(this, "Geocoding failed for the new address. Please check the address.", Toast.LENGTH_SHORT).show();
+            // Address was not found in the database, show a message to the user
+            Toast.makeText(this, "Address not found or failed to update.", Toast.LENGTH_SHORT).show();
+            output_result.setText("Address not found or failed to update.");
         }
+
+        // Clear the "New Address" input field
+        newAddressInput.setText("");
     }
 
 }
